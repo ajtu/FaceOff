@@ -93,7 +93,7 @@ class ViewController: UIViewController, ARSessionDelegate {
         }
     }
 
-    var expressionsToUse: [Expression] = [SmileExpression(), EyebrowsRaisedExpression(), EyeBlinkLeftExpression(), EyeBlinkRightExpression(), JawOpenExpression(), LookLeftExpression(), LookRightExpression()] // all the possible expressions shown during a game session
+    var expressionsToUse: [Expression] = [SmileExpression(), EyebrowsRaisedExpression(), EyeBlinkLeftExpression(), EyeBlinkRightExpression(), JawOpenExpression()] // all the possible expressions shown during a game session
     var currentExpression: Expression? = nil {
         didSet {
             if currentExpression != nil {
