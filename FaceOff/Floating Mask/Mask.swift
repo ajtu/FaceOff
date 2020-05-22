@@ -13,7 +13,7 @@ class Mask: SCNNode, VirtualFaceContent {
     init(geometry: ARSCNFaceGeometry) {
         let material = geometry.firstMaterial!
         
-        material.diffuse.contents = UIColor.white
+        material.diffuse.contents = UIColor.blue
 //        material.lightingModel = .physicallyBased
         
         super.init()

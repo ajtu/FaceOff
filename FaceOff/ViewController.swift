@@ -26,11 +26,12 @@ class ViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.sceneView.backgroundColor = .clear
         self.sceneView.scene = SCNScene()
         self.sceneView.rendersContinuously = true
-        
+        faceImageView.layer.cornerRadius = 100
+        faceImageView.center.x = self.view.center.x
+        sceneView.center.x = self.view.center.x
         // floating mask node
         if let device = MTLCreateSystemDefaultDevice(), let geo = ARSCNFaceGeometry(device: device) {
             self.maskNode = Mask(geometry: geo)
@@ -137,8 +138,8 @@ class ViewController: UIViewController, ARSessionDelegate {
         self.currentPoints = 0
         self.maxPointsAwardedPerExpression = 10
         self.livesLeft = 3
-        self.timeIntervalPerExpression = 2.0
-        self.timeIntervalBetweenExpressions = 1.3
+        self.timeIntervalPerExpression = 3.5
+        self.timeIntervalBetweenExpressions = 2.0
         self.gameActive = true
         self.showNextExpressionWhenReady()
         self.actionLabel.text = "Ready…"
